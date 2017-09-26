@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achievability", "Achievability\Achievability.csproj", "{18CA98B8-A600-4B8C-98B9-CDB7DF7B0254}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18CA98B8-A600-4B8C-98B9-CDB7DF7B0254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CA98B8-A600-4B8C-98B9-CDB7DF7B0254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CA98B8-A600-4B8C-98B9-CDB7DF7B0254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CA98B8-A600-4B8C-98B9-CDB7DF7B0254}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A5BF791-A122-4385-931A-67BF5E6B7AE1}
+	EndGlobalSection
+EndGlobal
