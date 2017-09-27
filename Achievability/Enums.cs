@@ -6,6 +6,12 @@ namespace Achievability
 {
     public class Enums
 	{
+		
+		public enum PersonaType {
+			PATIENT,
+			DOCTOR
+		}
+
 		public enum GoalTypes {
 			GOAL,
 			TASK
@@ -31,8 +37,10 @@ namespace Achievability
 			HasANurse,
 			LivesInAnAsylum,
 			HasAnAssistedLivingDevice,
-			WalksOrRunsAsAPhysicalActivity
+			WalksOrRunsAsAPhysicalActivity,
+			HasCellPhone,
+			HasInternet,
+			HasAmbulanceAccess
 		}
-
 	}
 }

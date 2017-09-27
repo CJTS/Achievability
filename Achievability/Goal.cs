@@ -22,12 +22,14 @@ namespace Achievability
 			var orValue = false;
 			var useOr = false;
 			foreach (var contextConstraint in ContextConstraints) {
-				if (contextConstraint.isOrDecomposition()) {
-					useOr = true;
-					orValue |= contextConstraint.satisfies(currentPersona) == contextConstraint.Happen;
-				} else if (contextConstraint.isAndDecomposition()) {
-					if (contextConstraint.satisfies(currentPersona) != contextConstraint.Happen) {
-						return false;
+				if (contextConstraint.Type == currentPersona.Type) {
+					if (contextConstraint.isOrDecomposition()) {
+						useOr = true;
+						orValue |= contextConstraint.satisfies(currentPersona) == contextConstraint.Happen;
+					} else if (contextConstraint.isAndDecomposition()) {
+						if (contextConstraint.satisfies(currentPersona) != contextConstraint.Happen) {
+							return false;
+						}
 					}
 				}
 			}

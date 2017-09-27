@@ -2,12 +2,13 @@
 using static Achievability.Enums;
 
 namespace Achievability {
-	public class Context
-	{
+	public class Context {
 		public List<FactTypes> Facts { get; set; }
+		public PersonaType Type { get; set; }
 
-		public Context(List<FactTypes> facts) {
+		public Context(List<FactTypes> facts, PersonaType type) {
 			Facts = facts;
+			Type = type;
 		}
 	}
 
@@ -33,6 +34,7 @@ namespace Achievability {
 		public List<Fact> Facts { get; set; }
 		public bool Happen { get; set; }
 		public DecompositionTypes Decomposition { get; set; }
+		public PersonaType Type { get; set; }
 
 		public bool isOrDecomposition() {
 			return Decomposition == DecompositionTypes.OR;
@@ -54,7 +56,19 @@ namespace Achievability {
 		}
 	}
 
-	public class HealthRiskContext : WorldContext {
+	public class PatientContext : WorldContext {
+		public PatientContext() {
+			Type = PersonaType.PATIENT;
+		}
+	}
+
+	public class DoctorContext : WorldContext {
+		public DoctorContext() {
+			Type = PersonaType.DOCTOR;
+		}
+	}
+
+	public class HealthRiskContext : PatientContext {
 		public HealthRiskContext(DecompositionTypes decomposition, bool happen = true) {
 			Facts = new List<Fact>() {
 				new Fact(FactTypes.HasDiabetes , DecompositionTypes.OR),
@@ -69,7 +83,7 @@ namespace Achievability {
 		}
 	}
 
-	public class AbiltyToMoveContext : WorldContext {
+	public class AbiltyToMoveContext : PatientContext {
 		public AbiltyToMoveContext(DecompositionTypes decomposition, bool happen = true) {
 			Facts = new List<Fact>() {
 				new Fact(FactTypes.CanWalk , DecompositionTypes.OR),
@@ -80,7 +94,7 @@ namespace Achievability {
 		}
 	}
 
-	public class TecnologyAversionContext : WorldContext {
+	public class TecnologyAversionContext : PatientContext {
 		public TecnologyAversionContext(DecompositionTypes decomposition, bool happen = true) {
 			Facts = new List<Fact>() {
 				new Fact(FactTypes.DontLikeTecnology , DecompositionTypes.OR),
@@ -91,7 +105,7 @@ namespace Achievability {
 		}
 	}
 
-	public class HomeAssistanceContext : WorldContext {
+	public class HomeAssistanceContext : PatientContext {
 		public HomeAssistanceContext(DecompositionTypes decomposition, bool happen = true) {
 			Facts = new List<Fact>() {
 				new Fact(FactTypes.LivesWithHisOrHersChildrens , DecompositionTypes.OR),
@@ -104,10 +118,41 @@ namespace Achievability {
 		}
 	}
 
-	public class PhysicalActivityContext : WorldContext {
+	public class PhysicalActivityContext : PatientContext {
 		public PhysicalActivityContext(DecompositionTypes decomposition, bool happen = true) {
 			Facts = new List<Fact>() {
 				new Fact(FactTypes.WalksOrRunsAsAPhysicalActivity , DecompositionTypes.OR),
+			};
+			Happen = happen;
+			Decomposition = decomposition;
+		}
+	}
+
+	public class MeansOfCommunication : DoctorContext {
+		public MeansOfCommunication(DecompositionTypes decomposition, bool happen = true) {
+			Facts = new List<Fact>() {
+				new Fact(FactTypes.HasCellPhone , DecompositionTypes.OR),
+				new Fact(FactTypes.HasInternet , DecompositionTypes.OR),
+			};
+			Happen = happen;
+			Decomposition = decomposition;
+		}
+	}
+
+	public class MeansOfInformation : DoctorContext {
+		public MeansOfInformation(DecompositionTypes decomposition, bool happen = true) {
+			Facts = new List<Fact>() {
+				new Fact(FactTypes.HasCellPhone , DecompositionTypes.OR),
+			};
+			Happen = happen;
+			Decomposition = decomposition;
+		}
+	}
+
+	public class MeansOfHelping : DoctorContext {
+		public MeansOfHelping(DecompositionTypes decomposition, bool happen = true) {
+			Facts = new List<Fact>() {
+				new Fact(FactTypes.HasAmbulanceAccess , DecompositionTypes.OR),
 			};
 			Happen = happen;
 			Decomposition = decomposition;
