@@ -49,24 +49,160 @@ namespace Achievability
 			var G1 = new Goal("G1", GoalTypes.GOAL, DecompositionTypes.AND, new List<Goal>() { G2, G3, G4, G5 }, new List<WorldContext>());
 
 			CGM cgm = new CGM(new List<Goal>() { G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11, G12, G13, G14, G15, G16, G17, G18 });
-			Context mary = new Context(new List<FactTypes>() { FactTypes.HasDiabetes, FactTypes.ProneToFalling, FactTypes.HasOsteoporosis, FactTypes.CanWalk, FactTypes.HasAnAssistedLivingDevice }, PersonaType.PATIENT);
 
-			Console.WriteLine("Start.");
-			
-			var plan = cgm.getRoot().isAchievable(cgm, mary);
+			Context mary = new Context(
+				new List<FactTypes>() {
+					FactTypes.HasDiabetes,
+					FactTypes.ProneToFalling,
+					FactTypes.HasOsteoporosis,
+					FactTypes.CanWalk,
+					FactTypes.HasAnAssistedLivingDevice
+				},
+				PersonaType.PATIENT);
 
+			Context bruna = new Context(
+				new List<FactTypes>() {
+					FactTypes.HasDiabetes,
+					FactTypes.CanWalk,
+					FactTypes.LivesWithHisOrHersChildrens,
+					FactTypes.HasAnAssistedLivingDevice,
+					FactTypes.WalksOrRunsAsAPhysicalActivity
+				},
+				PersonaType.PATIENT);
+
+			Context aurora = new Context(
+				new List<FactTypes>() {
+					FactTypes.HasDiabetes,
+					FactTypes.HasHBP,
+					FactTypes.Cardiac,
+					FactTypes.ProneToFalling,
+					FactTypes.LivesWithHisOrHersChildrens,
+					FactTypes.HasAnAssistedLivingDevice,
+				},
+				PersonaType.PATIENT);
+
+			Context murilo = new Context(
+				new List<FactTypes>() {
+					FactTypes.HasInternet,
+					FactTypes.HasCellPhone,
+					FactTypes.HasAmbulanceAccess
+				},
+				PersonaType.DOCTOR);
+
+			var plan = cgm.getRoot().isAchievable(cgm, mary);;
+
+			Console.WriteLine("Start. MARY");
+			var watch = System.Diagnostics.Stopwatch.StartNew();
+			plan = cgm.getRoot().isAchievable(cgm, bruna);
+			watch.Stop();
+			var elapsedMs = watch.Elapsed;
+			var goalsNumber = 0;
+			var tasksNumber = 0;
 			if (plan != null) {
 				Console.WriteLine("The main goal is achievable.");
 				Console.WriteLine("The plan is:");
-				plan.GoalSequence.Reverse();
 				foreach (var goal in plan.GoalSequence) {
+					if(goal.Name.ToCharArray()[0] == 'G') {
+						goalsNumber++;
+					} else {
+						tasksNumber++;
+					}
 					Console.WriteLine(goal.Name);
 				}
 			} else {
 				Console.WriteLine("The main goal is NOT achievable.");
 			}
-
+			Console.WriteLine("Goals failed: " + (18 - goalsNumber) + ".");
+			Console.WriteLine("Goals achieved: " + goalsNumber + ".");
+			Console.WriteLine("Execution Time: " + elapsedMs + ".");
+			Console.WriteLine("Tasks failed: " + (21 - tasksNumber) + ".");
+			Console.WriteLine("Tasks achieved: " + tasksNumber + ".");
 			Console.WriteLine("End.");
+
+			Console.WriteLine("Start. BRUNA");
+			watch = System.Diagnostics.Stopwatch.StartNew();
+			plan = cgm.getRoot().isAchievable(cgm, bruna);
+			watch.Stop();
+			elapsedMs = watch.Elapsed;
+			goalsNumber = 0;
+			tasksNumber = 0;
+			if (plan != null) {
+				Console.WriteLine("The main goal is achievable.");
+				Console.WriteLine("The plan is:");
+				foreach (var goal in plan.GoalSequence) {
+					if (goal.Name.ToCharArray()[0] == 'G') {
+						goalsNumber++;
+					} else {
+						tasksNumber++;
+					}
+					Console.WriteLine(goal.Name);
+				}
+			} else {
+				Console.WriteLine("The main goal is NOT achievable.");
+			}
+			Console.WriteLine("Goals failed: " + (18 - goalsNumber) + ".");
+			Console.WriteLine("Goals achieved: " + goalsNumber + ".");
+			Console.WriteLine("Execution Time: " + elapsedMs + ".");
+			Console.WriteLine("Tasks failed: " + (21 - tasksNumber) + ".");
+			Console.WriteLine("Tasks achieved: " + tasksNumber + ".");
+			Console.WriteLine("End.");
+
+			Console.WriteLine("Start AURORA.");
+			watch = System.Diagnostics.Stopwatch.StartNew();
+			plan = cgm.getRoot().isAchievable(cgm, aurora);
+			watch.Stop();
+			elapsedMs = watch.Elapsed;
+			goalsNumber = 0;
+			tasksNumber = 0;
+			if (plan != null) {
+				Console.WriteLine("The main goal is achievable.");
+				Console.WriteLine("The plan is:");
+				foreach (var goal in plan.GoalSequence) {
+					if (goal.Name.ToCharArray()[0] == 'G') {
+						goalsNumber++;
+					} else {
+						tasksNumber++;
+					}
+					Console.WriteLine(goal.Name);
+				}
+			} else {
+				Console.WriteLine("The main goal is NOT achievable.");
+			}
+			Console.WriteLine("Goals failed: " + (18 - goalsNumber) + ".");
+			Console.WriteLine("Goals achieved: " + goalsNumber + ".");
+			Console.WriteLine("Execution Time: " + elapsedMs + ".");
+			Console.WriteLine("Tasks failed: " + (21 - tasksNumber) + ".");
+			Console.WriteLine("Tasks achieved: " + tasksNumber + ".");
+			Console.WriteLine("End.");
+
+			Console.WriteLine("Start MURILO.");
+			watch = System.Diagnostics.Stopwatch.StartNew();
+			plan = cgm.getRoot().isAchievable(cgm, murilo);
+			watch.Stop();
+			elapsedMs = watch.Elapsed;
+			goalsNumber = 0;
+			tasksNumber = 0;
+			if (plan != null) {
+				Console.WriteLine("The main goal is achievable.");
+				Console.WriteLine("The plan is:");
+				foreach (var goal in plan.GoalSequence) {
+					if (goal.Name.ToCharArray()[0] == 'G') {
+						goalsNumber++;
+					} else {
+						tasksNumber++;
+					}
+					Console.WriteLine(goal.Name);
+				}
+			} else {
+				Console.WriteLine("The main goal is NOT achievable.");
+			}
+			Console.WriteLine("Goals failed: " + (18 - goalsNumber) + ".");
+			Console.WriteLine("Goals achieved: " + goalsNumber + ".");
+			Console.WriteLine("Execution Time: " + elapsedMs + ".");
+			Console.WriteLine("Tasks failed: " + (21 - tasksNumber) + ".");
+			Console.WriteLine("Tasks achieved: " + tasksNumber + ".");
+			Console.WriteLine("End.");
+
 			Console.WriteLine("Press any key to quit.");
 			Console.ReadKey();
 		}
