@@ -19,7 +19,8 @@ namespace Achievability
 
 		public enum DecompositionTypes {
 			AND,
-			OR
+			OR,
+			LEAF
 		}
 
 		public enum FactTypes {
@@ -33,6 +34,7 @@ namespace Achievability
 			HasAWheelChair,
 			DontLikeTecnology,
 			HasBadExperiencesWithTecnology,
+			WantsToAvoidFrustatingExperiencesWithTecnoloies,
 			LivesWithHisOrHersChildrens,
 			HasANurse,
 			LivesInAnAsylum,

@@ -99,6 +99,7 @@ namespace Achievability {
 			Facts = new List<Fact>() {
 				new Fact(FactTypes.DontLikeTecnology , DecompositionTypes.OR),
 				new Fact(FactTypes.HasBadExperiencesWithTecnology , DecompositionTypes.OR),
+				new Fact(FactTypes.WantsToAvoidFrustatingExperiencesWithTecnoloies , DecompositionTypes.OR),
 			};
 			Happen = happen;
 			Decomposition = decomposition;

@@ -76,10 +76,12 @@ namespace Achievability
 						complete = addPlanToPlan(p, complete);
 					}
 				} else if (root.isAndDecomposition()) {
+					if(root == cgm.getRoot()) {
+						return new Plan(d);
+					}
 					return null;
 				}
 			}
-			complete = addPlanToPlan(new Plan(root), complete);
 			return complete;
 		}
 
