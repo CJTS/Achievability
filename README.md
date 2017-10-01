@@ -140,8 +140,8 @@ Cm:(F7)
 Ct:()  
 Cha:(F11, F14)  
 Ca:(F15)  
-Bruna(2):(F1,F7,F11,F14,F15)  
-Bruna ContextSet: {Ch, Cm, Cha, Ca}  
+Jennifer(2):(F1,F7,F11,F14,F15)  
+Jennifer ContextSet: {Ch, Cm, Cha, Ca}  
 
 Dorothy's Context:  
 ![Dorothy's Context](/dorothy.PNG?raw=true "Dorothy's Context")  
@@ -158,32 +158,32 @@ Paul's Context:
 Cc:(F16 && F17)  
 Ci:(F17)  
 Che:(F18)  
-Murilo(4):(F16,F17,F18)  
-Murilo ContextSet:{Cc, Ci, Che}
+Paul(4):(F16,F17,F18)  
+Paul ContextSet:{Cc, Ci, Che}
 
 ## Metrics And examples:
 
 R1: Number of goals failing.  
 	Mary 2  
-	Bruna 0  
+	Jennifer 0  
 	Dorothy 0  
 	Paul 0  
   
 R2: Number of goals achieved.  
 	Mary 16  
-	Bruna 18  
+	Jennifer 18  
 	Dorothy 18  
 	Paul 18  
   
 R3: Execution time.  
 	Mary 00:00:00.0000406  
-	Bruna 00:00:00.0000240  
+	Jennifer 00:00:00.0000240  
 	Dorothy 00:00:00.0000165  
 	Paul 00:00:00.0000223  
   
 R4: % of CGMs being satisfied  
 	Mary 100%  
-	Bruna 100%  
+	Jennifer 100%  
 	Dorothy 100%  
 	Paul 100%  
 
