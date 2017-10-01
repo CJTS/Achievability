@@ -163,25 +163,23 @@ Paul ContextSet:{Cc, Ci, Che}
 
 ## Metrics And examples:
 
-R1: Number of goals failing.  
-	Mary 2  
-	Jennifer 0  
-	Dorothy 0  
-	Paul 0  
-  
-R2: Number of goals achieved.  
-	Mary 16  
-	Jennifer 18  
-	Dorothy 18  
-	Paul 18  
-  
-R3: Execution time.  
+Q1: Is the algorithm efficient to come up
+with an execution plan (Execution time.  )
 	Mary 00:00:00.0000406  
 	Jennifer 00:00:00.0000240  
 	Dorothy 00:00:00.0000165  
 	Paul 00:00:00.0000223  
   
-R4: % of CGMs being satisfied  
+Q2: Is the root goal achieved for each
+modelled persona? (Yes/No)
+	Mary No    
+	Jennifer Yes  
+	Dorothy Yes  
+	Paul Yes  
+  
+Q3: Are the plans provided by the
+algorithm correct? (% of correct
+plans)
 	Mary 100%  
 	Jennifer 100%  
 	Dorothy 100%  
