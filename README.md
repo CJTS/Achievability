@@ -124,7 +124,7 @@ G18:(T20)
 
 ## Personas
 Mary's Context:  
-![Mary's Context](/mary.png?raw=true "Mary's Context")    
+![Mary's Context](/Mary.PNG?raw=true "Mary's Context")    
 Ch:(F1 && F5 && F6)  
 Cm:()  
 Ct:(F19)  
