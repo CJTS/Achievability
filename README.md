@@ -124,7 +124,7 @@ G18:(T20)
 
 ## Personas
 Mary's Context:  
-![Mary's Context](/mary.PNG?raw=true "Mary's Context")  
+![Mary's Context](/mary.PNG?raw=true "Mary's Context")    
 Ch:(F1 && F5 && F6)  
 Cm:(F7)  
 Ct:(F19)  
@@ -134,7 +134,7 @@ Mary(1):(F1,F5,F6,F7,F14,F19)
 Mary ContextSet:{Ch, Cm, Cha, Ct}  
 
 Jennifer's Context:  
-![Jennifer's Context](/jennifer.PNG?raw=true "Jennifer's Context")  
+![Jennifer's Context](/jennifer.PNG?raw=true "Jennifer's Context")    
 Ch:(F1)  
 Cm:(F7)  
 Ct:()  
@@ -144,16 +144,16 @@ Jennifer(2):(F1,F7,F11,F14,F15)
 Jennifer ContextSet: {Ch, Cm, Cha, Ca}  
 
 Dorothy's Context:  
-![Dorothy's Context](/dorothy.PNG?raw=true "Dorothy's Context")  
+![Dorothy's Context](/dorothy.PNG?raw=true "Dorothy's Context")    
 Ch:(F1 && F2 && F3 && F5)  
 Cm:()  
 Ct:()  
 Cha:(F11, F14)  
 Ca:(F15)	  
-Aurora(3):(F1,F2,F3,F5,F11,F14,F15)  
-Aurora ContextSet:{Ch, Cha, Ca}
+Dorothy(3):(F1,F2,F3,F5,F11,F14,F15)  
+Dorothy ContextSet:{Ch, Cha, Ca}
 
-Paul's Context:
+Paul's Context:  
 ![Paul's Context](/paul.PNG?raw=true "Paul's Context")   
 Cc:(F16 && F17)  
 Ci:(F17)  
