@@ -12,7 +12,11 @@ namespace Achievability
 			Goals = goals;
 		}
 
-		public Goal getRoot() {
+		/// <summary>
+        /// Get the root goal of the cgm tree
+        /// </summary>
+        /// <returns>Goal node</returns>
+        public Goal GetRoot() {
 			return Goals[0];
 		}
 	}

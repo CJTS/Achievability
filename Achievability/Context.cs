@@ -21,11 +21,19 @@ namespace Achievability {
 			Decomposition = decomposition;
 		}
 
-		public bool isOrDecomposition() {
+        /// <summary>
+        /// Return if this node has a OR decomposition of its children.
+        /// </summary>
+        /// <returns>True or false</returns>
+        public bool IsOrDecomposition() {
 			return Decomposition == DecompositionTypes.OR;
 		}
 
-		public bool isAndDecomposition() {
+        /// <summary>
+        /// Return if this node has a AND decomposition of its children.
+        /// </summary>
+        /// <returns>True or false</returns>
+        public bool IsAndDecomposition() {
 			return Decomposition == DecompositionTypes.AND;
 		}
 	}
@@ -36,18 +44,31 @@ namespace Achievability {
 		public DecompositionTypes Decomposition { get; set; }
 		public PersonaType Type { get; set; }
 
-		public bool isOrDecomposition() {
+        /// <summary>
+        /// Return if this node has a OR decomposition of its children.
+        /// </summary>
+        /// <returns>True or false</returns>
+        public bool IsOrDecomposition() {
 			return Decomposition == DecompositionTypes.OR;
 		}
 
-		public bool isAndDecomposition() {
+        /// <summary>
+        /// Return if this node has a AND decomposition of its children.
+        /// </summary>
+        /// <returns>True or false</returns>
+        public bool IsAndDecomposition() {
 			return Decomposition == DecompositionTypes.AND;
 		}
 
-		public bool satisfies(Context personaContext) {
+		/// <summary>
+        /// Discovers if the persona contexts satisfies the cgm context 
+        /// </summary>
+        /// <param name="personaContext"></param>
+        /// <returns>True or false</returns>
+        public bool Satisfies(Context personaContext) {
 			var orValue = false;
 			foreach (var fact in Facts) {
-				if (fact.isOrDecomposition()) {
+				if (fact.IsOrDecomposition()) {
 					orValue |= personaContext.Facts.Contains(fact.Type);
 				}
 			}
@@ -83,10 +104,10 @@ namespace Achievability {
 		}
 	}
 
-	public class AbiltyToMoveContext : PatientContext {
-		public AbiltyToMoveContext(DecompositionTypes decomposition, bool happen = true) {
+	public class MobilityIssue : PatientContext {
+		public MobilityIssue(DecompositionTypes decomposition, bool happen = true) {
 			Facts = new List<Fact>() {
-				new Fact(FactTypes.CanWalk , DecompositionTypes.OR),
+				new Fact(FactTypes.DifficultyInWalking , DecompositionTypes.OR),
 				new Fact(FactTypes.HasAWheelChair , DecompositionTypes.OR),
 			};
 			Happen = happen;

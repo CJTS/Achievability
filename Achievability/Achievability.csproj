@@ -2,7 +2,20 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFramework>net461</TargetFramework>
+    <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationIcon />
+    <StartupObject />
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkProfile />
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Optimize>true</Optimize>
+    <DocumentationFile>bin\x86\Debug\net461\win7-x86\Achievability.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
