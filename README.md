@@ -13,8 +13,8 @@ F5 - Prone to falling
 F6 - Has osteoporosis  
 Ch:(F1 || F2 || F3 || F4 || F5 || F6)
 
-Cm: Abilty to move:  
-F7 - Can walk  
+Cm: Mobility issue:  
+F7 - Difficulty in walking  
 F8 - Has a wheel chair  
 Cm:(F7 || F8)
 
@@ -126,32 +126,32 @@ G18:(T20)
 Mary's Context:  
 ![Mary's Context](/mary.PNG?raw=true "Mary's Context")    
 Ch:(F1 && F5 && F6)  
-Cm:(F7)  
+Cm:()  
 Ct:(F19)  
 Cha:(F14)  
 Ca:()	  
-Mary(1):(F1,F5,F6,F7,F14,F19)  
-Mary ContextSet:{Ch, Cm, Cha, Ct}  
+Mary(1):(F1,F5,F6,F14,F19)  
+Mary ContextSet:{Ch, Cha, Ct}  
 
 Jennifer's Context:  
 ![Jennifer's Context](/jennifer.PNG?raw=true "Jennifer's Context")    
 Ch:(F1)  
-Cm:(F7)  
+Cm:()  
 Ct:()  
 Cha:(F11, F14)  
 Ca:(F15)  
-Jennifer(2):(F1,F7,F11,F14,F15)  
-Jennifer ContextSet: {Ch, Cm, Cha, Ca}  
+Jennifer(2):(F1,F11,F14,F15)  
+Jennifer ContextSet: {Ch, Cha, Ca}  
 
 Dorothy's Context:  
 ![Dorothy's Context](/dorothy.PNG?raw=true "Dorothy's Context")    
 Ch:(F1 && F2 && F3 && F5)  
-Cm:()  
+Cm:(F7)  
 Ct:()  
 Cha:(F11, F14)  
 Ca:(F15)	  
-Dorothy(3):(F1,F2,F3,F5,F11,F14,F15)  
-Dorothy ContextSet:{Ch, Cha, Ca}
+Dorothy(3):(F1,F2,F3,F5,F7,F11,F14,F15)  
+Dorothy ContextSet:{Ch, Cm, Cha, Ca}
 
 Paul's Context:  
 ![Paul's Context](/paul.PNG?raw=true "Paul's Context")   
